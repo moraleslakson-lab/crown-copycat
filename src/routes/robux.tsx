@@ -30,7 +30,7 @@ export const Route = createFileRoute("/robux")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: BuyRobux;
+  component: BuyRobux,
 });
 
 const packages = [
