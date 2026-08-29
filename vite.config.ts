@@ -10,4 +10,10 @@ export default defineConfig({
   vite: {
     base: "/crown-copycat/",
   },
+
+  tanstackStart: {
+    prerender: {
+      enabled: true,
+    },
+  },
 });
