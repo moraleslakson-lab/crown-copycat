@@ -14,6 +14,7 @@ import crown from "@/assets/crown.jpg.asset.json";
 import { useStoreSettings } from "@/lib/store-settings";
 
 export const Route = createFileRoute("/robux")({
+  ssr: false,
   head: () => ({
     meta: [
       { title: "Buy Robux — Packages, Plus & Gift Cards" },
