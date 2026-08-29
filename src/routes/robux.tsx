@@ -88,7 +88,7 @@ function BuyRobux() {
             </span>
           </div>
           <article className="mt-4 overflow-hidden rounded-2xl border border-border/60 bg-card/60">
-            <img src={crown.url} alt="Gold Crown of Ozymandias" className="w-full object-cover" />
+            <img src="/192a7bd92c19b511.gif" alt="Gold Crown of Ozymandias" className="w-full object-cover" />
             <div className="px-5 pb-5">
               <h3 className="text-[17px] font-bold">Gold Crown of Ozymandias</h3>
               <p className="mt-1 flex items-center gap-1.5 text-[15px] text-muted-foreground">
