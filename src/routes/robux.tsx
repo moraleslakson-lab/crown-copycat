@@ -11,6 +11,7 @@ import {
   VerifiedIcon,
 } from "@/components/rbx-icons";
 import crown from "@/assets/crown.jpg.asset.json";
+import { useStoreSettings } from "@/lib/store-settings";
 
 export const Route = createFileRoute("/robux")({
   head: () => ({
@@ -49,25 +50,31 @@ const faqs = ["What are Robux?", "Where are my Robux?", "Do Robux expire?"];
 
 function BuyRobux() {
   const [open, setOpen] = useState<string | null>(null);
+  const { settings } = useStoreSettings();
 
   return (
     <div className="rbx-grid min-h-screen pb-16">
       <header className="sticky top-0 z-30 bg-surface/95 backdrop-blur">
         <div className="px-5 pt-4">
-          <Link to="/" aria-label="Close">
+          <Link to="/" aria-label="Close" className="rbx-tap inline-block">
             <CloseIcon className="h-8 w-8 text-muted-foreground" />
           </Link>
         </div>
         <div className="mt-2 flex items-center justify-between border-b border-border/50 px-5 py-3">
           <div className="flex flex-1 items-center justify-center gap-2 text-xl font-bold">
-            <RobuxIcon className="h-6 w-6" />7
+            <RobuxIcon className="h-6 w-6" />
+            {settings.robux.toLocaleString()}
           </div>
-          <button className="flex items-center gap-2 rounded-xl bg-pill px-4 py-2.5 text-[15px] font-semibold">
+          <button className="rbx-tap flex items-center gap-2 rounded-xl bg-pill px-4 py-2.5 text-[15px] font-semibold">
             <SendIcon className="h-5 w-5" />
             Send
           </button>
         </div>
+        <p className="px-5 py-2 text-center text-[12px] text-muted-foreground">
+          {settings.disclaimer}
+        </p>
       </header>
+
 
       <main className="mx-auto max-w-md px-5">
         <h1 className="pt-8 text-[44px] leading-none font-extrabold tracking-tight">Buy Robux</h1>
