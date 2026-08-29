@@ -55,23 +55,23 @@ const continues = [
   { img: stealegg.url, title: "Steal An Egg", stat: "Ishow…", avatar: true },
 ];
 
-function Header() {
+function Header({ onBell }: { onBell: () => void }) {
   return (
     <header className="sticky top-0 z-30 bg-background/95 backdrop-blur">
       <div className="flex items-center justify-between px-5 pt-4 pb-3">
         <MenuIcon className="h-6 w-8 text-foreground" />
-        <span className="font-display text-2xl font-extrabold tracking-tight">RBLOX</span>
+        <img src={robloxLogo.url} alt="Roblox" className="h-7 w-auto object-contain" />
         <div className="flex items-center gap-4">
           <SearchIcon className="h-6 w-6" />
-          <Link to="/robux" aria-label="Buy Robux">
+          <Link to="/robux" aria-label="Buy Robux" className="rbx-tap">
             <RobuxIcon className="h-6 w-6" />
           </Link>
-          <div className="relative">
+          <button onClick={onBell} aria-label="Open store settings" className="rbx-tap relative">
             <BellIcon className="h-6 w-6" />
             <span className="absolute -top-2 -right-2 rounded-full bg-destructive px-1.5 text-[11px] font-bold leading-4">
               35
             </span>
-          </div>
+          </button>
         </div>
       </div>
       <div className="grid grid-cols-2 text-center text-[15px]">
@@ -85,7 +85,7 @@ function Header() {
 
 function GameCard({ img, title, rating }: { img: string; title: string; rating: string }) {
   return (
-    <div>
+    <div className="rbx-tap">
       <img src={img} alt={title} loading="lazy" className="aspect-[16/9] w-full rounded-xl object-cover" />
       <h3 className="mt-2 truncate text-[15px] font-bold">{title}</h3>
       <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
@@ -97,33 +97,50 @@ function GameCard({ img, title, rating }: { img: string; title: string; rating: 
 }
 
 function Index() {
+  const { settings } = useStoreSettings();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
   return (
     <div className="min-h-screen pb-24">
-      <Header />
+      <Header onBell={() => setSettingsOpen(true)} />
       <main className="mx-auto max-w-md">
         <section className="px-5 pt-5">
           <div className="flex items-center gap-4">
-            <img src={avMe.url} alt="aku_budoy avatar" className="h-11 w-11 rounded-full bg-muted object-cover" />
-            <h1 className="text-xl font-bold">aku_budoy</h1>
+            <img
+              src={settings.avatar}
+              alt={`${settings.username} avatar`}
+              className="h-11 w-11 rounded-full bg-muted object-cover"
+            />
+            <h1 className="text-xl font-bold">{settings.username}</h1>
           </div>
           <div className="mt-4 flex gap-4 overflow-x-auto pb-1 [scrollbar-width:none]">
-            <div className="w-24 shrink-0 text-center">
+            <button
+              onClick={() => setSettingsOpen(true)}
+              className="rbx-tap w-24 shrink-0 text-center"
+            >
               <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card">
                 <AddFriendIcon className="h-11 w-11 text-foreground/80" />
               </div>
               <p className="mt-2 text-[13px] font-semibold">Add Friends</p>
-            </div>
-            {[
-              { img: avSam.url, name: "sam" },
-              { img: avLucio.url, name: "LUCIO" },
-            ].map((f) => (
-              <div key={f.name} className="w-24 shrink-0 text-center">
+            </button>
+            {settings.friends.map((f) => (
+              <div key={f.id} className="rbx-tap w-24 shrink-0 text-center">
                 <div className="relative">
-                  <img src={f.img} alt={f.name} className="h-24 w-24 rounded-full bg-card object-cover" />
+                  {f.avatar ? (
+                    <img
+                      src={f.avatar}
+                      alt={f.name}
+                      className="h-24 w-24 rounded-full bg-card object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-card text-2xl font-bold">
+                      {f.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
                   <span className="absolute right-1 bottom-1 h-5 w-5 rounded-full border-2 border-background bg-[#00b06f]" />
                 </div>
-                <p className="mt-2 text-[13px] font-bold">{f.name}</p>
-                <p className="text-[13px] text-muted-foreground">Steal An Egg</p>
+                <p className="mt-2 truncate text-[13px] font-bold">{f.name}</p>
+                <p className="truncate text-[13px] text-muted-foreground">{f.game}</p>
               </div>
             ))}
             <div className="w-24 shrink-0 text-center">
@@ -147,7 +164,7 @@ function Index() {
           </h2>
           <div className="mt-3 flex gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none]">
             {continues.map((g) => (
-              <div key={g.title} className="w-[136px] shrink-0">
+              <div key={g.title} className="rbx-tap w-[136px] shrink-0">
                 <img
                   src={g.img}
                   alt={g.title}
@@ -175,6 +192,7 @@ function Index() {
         </section>
       </main>
       <BottomNav />
+      <StoreSettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} />
     </div>
   );
 }
