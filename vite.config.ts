@@ -4,16 +4,18 @@
 //     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { cloudflare } from "@cloudflare/vite-plugin";
+import viteReact from "@vitejs/plugin-react";
 
 export default defineConfig({
-  vite: {
-    base: "/crown-copycat/",
-  },
-
-  tanstackStart: {
-    prerender: {
-      enabled: true,
-    },
-  },
+  base: "/crown-copycat/",
+  plugins: [
+    cloudflare({
+      viteEnvironment: { name: "ssr" },
+    }),
+    tanstackStart(),
+    viteReact(),
+  ],
 });
