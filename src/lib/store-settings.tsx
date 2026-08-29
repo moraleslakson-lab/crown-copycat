@@ -66,6 +66,11 @@ export function StoreSettingsProvider({ children }: { children: ReactNode }) {
     }
   }, [settings]);
 
+  useEffect(() => {
+    document.documentElement.dataset["rbxTheme"] = settings.theme;
+  }, [settings.theme]);
+
+
   const value = useMemo<Ctx>(
     () => ({
       settings,

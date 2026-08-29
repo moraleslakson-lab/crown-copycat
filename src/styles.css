@@ -160,9 +160,51 @@
   }
 }
 
+:root[data-rbx-theme="light"] {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.16 0.005 260);
+  --card: oklch(0.96 0.003 260);
+  --card-foreground: oklch(0.16 0.005 260);
+  --popover: oklch(0.98 0.002 260);
+  --popover-foreground: oklch(0.16 0.005 260);
+  --secondary: oklch(0.94 0.004 260);
+  --secondary-foreground: oklch(0.16 0.005 260);
+  --muted: oklch(0.94 0.004 260);
+  --muted-foreground: oklch(0.45 0.008 260);
+  --accent: oklch(0.92 0.005 260);
+  --accent-foreground: oklch(0.16 0.005 260);
+  --border: oklch(0.88 0.005 260);
+  --input: oklch(0.88 0.005 260);
+  --surface: oklch(0.98 0.002 260);
+  --pill: oklch(0.92 0.005 260);
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+@utility rbx-tap {
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 180ms ease;
+  &:active {
+    transform: scale(0.96);
+    opacity: 0.9;
+  }
+}
+
 @utility rbx-grid {
   background-image:
     linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px),
     linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
   background-size: 46px 46px;
 }
+
