@@ -14,13 +14,13 @@ import {
   ThumbUpIcon,
 } from "@/components/rbx-icons";
 const robloxLogo = "/roblox_logo.png";
-const muscle = "/muscle.jpg";
-const leaves = "/leaves.jpg";
-const bridge = "/bridge.jpg";
-const greedy = "/greedy.jpg";
-const evade = "/evade.jpg";
-const bloxfruits = "/bloxfruits.jpg";
-const stealegg = "/stealegg.jpg";
+const muscle = "/Screenshot_20260828-205446_1.jpg";
+const leaves = "/Screenshot_20260828-205446_2.jpg";
+const bridge = "/Screenshot_20260828-205446_3.jpg";
+const greedy = "/Screenshot_20260828-205446_4.jpg";
+const evade = "/Screenshot_20260828-205446_5.jpg";
+const bloxfruits = "/Screenshot_20260828-211832.jpg";
+const stealegg = "/Screenshot_20260828-211832.jpg";
 
 const crown = "/192a7bd92c19b511.gif";
 
