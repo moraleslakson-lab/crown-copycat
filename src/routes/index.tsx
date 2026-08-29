@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { BottomNav } from "@/components/bottom-nav";
+import { StoreSettingsModal } from "@/components/store-settings-modal";
+import { useStoreSettings } from "@/lib/store-settings";
 import {
   AddFriendIcon,
   BellIcon,
@@ -10,9 +13,7 @@ import {
   SearchIcon,
   ThumbUpIcon,
 } from "@/components/rbx-icons";
-import avMe from "@/assets/av_me.jpg.asset.json";
-import avSam from "@/assets/av_sam.jpg.asset.json";
-import avLucio from "@/assets/av_lucio.jpg.asset.json";
+import robloxLogo from "@/assets/roblox_logo.png.asset.json";
 import muscle from "@/assets/muscle.jpg.asset.json";
 import leaves from "@/assets/leaves.jpg.asset.json";
 import bridge from "@/assets/bridge.jpg.asset.json";
