@@ -13,14 +13,16 @@ import {
   SearchIcon,
   ThumbUpIcon,
 } from "@/components/rbx-icons";
-import robloxLogo from "@/assets/roblox_logo.png.asset.json";
-import muscle from "@/assets/muscle.jpg.asset.json";
-import leaves from "@/assets/leaves.jpg.asset.json";
-import bridge from "@/assets/bridge.jpg.asset.json";
-import greedy from "@/assets/greedy.jpg.asset.json";
-import evade from "@/assets/evade.jpg.asset.json";
-import bloxfruits from "@/assets/bloxfruits.jpg.asset.json";
-import stealegg from "@/assets/stealegg.jpg.asset.json";
+const robloxLogo = "/roblox_logo.png";
+const muscle = "/muscle.jpg";
+const leaves = "/leaves.jpg";
+const bridge = "/bridge.jpg";
+const greedy = "/greedy.jpg";
+const evade = "/evade.jpg";
+const bloxfruits = "/bloxfruits.jpg";
+const stealegg = "/stealegg.jpg";
+
+const crown = "/192a7bd92c19b511.gif";
 
 export const Route = createFileRoute("/")({
   head: () => ({
