@@ -13,7 +13,7 @@ import {
   SearchIcon,
   ThumbUpIcon,
 } from "@/components/rbx-icons";
-const robloxLogo = "/Screenshot_20260829-151751.jpg";
+import robloxLogo from "@/assets/roblox_logo.png.asset.json";
 const muscle = "/Screenshot_20260828-205446_1.jpg";
 const leaves = "/Screenshot_20260828-205446_2.jpg";
 const bridge = "/Screenshot_20260828-205446_3.jpg";
