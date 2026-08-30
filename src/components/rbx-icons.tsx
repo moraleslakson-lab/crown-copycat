@@ -1,20 +1,14 @@
+import robuxIconAsset from "@/assets/robux_icon.png.asset.json";
+
 type P = { className?: string };
 
 export const RobuxIcon = ({ className }: P) => (
-  <svg viewBox="0 0 24 24" fill="none" className={className}>
-    <path
-      d="M12 2.2 20.5 7v10L12 21.8 3.5 17V7L12 2.2Z"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M12 8.2 15.6 10.3v4.2L12 16.6 8.4 14.5v-4.2L12 8.2Z"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinejoin="round"
-    />
-  </svg>
+  <img
+    src={robuxIconAsset.url}
+    alt="Robux"
+    className={`rbx-robux-img object-contain ${className ?? ""}`}
+    draggable={false}
+  />
 );
 
 export const SearchIcon = ({ className }: P) => (
