@@ -13,7 +13,7 @@ import {
   SearchIcon,
   ThumbUpIcon,
 } from "@/components/rbx-icons";
-const robloxLogo = "/Screenshot_20260829-151751.jpg";
+import robloxLogo from "@/assets/roblox_logo.png.asset.json";
 const muscle = "/Screenshot_20260828-205446_1.jpg";
 const leaves = "/Screenshot_20260828-205446_2.jpg";
 const bridge = "/Screenshot_20260828-205446_3.jpg";
@@ -46,16 +46,16 @@ export const Route = createFileRoute("/")({
 });
 
 const recommended = [
-  { img: muscle.url, title: "💪Muscle Legends [U…", rating: "88% Rating" },
-  { img: leaves.url, title: "🍂Clean all the leaves!", rating: "86% Rating" },
-  { img: bridge.url, title: "Bridge Battles!", rating: "95% Rating" },
-  { img: greedy.url, title: "Greedy Growers 🌱", rating: "97% Rating" },
+  { img: muscle, title: "💪Muscle Legends [U…", rating: "88% Rating" },
+  { img: leaves, title: "🍂Clean all the leaves!", rating: "86% Rating" },
+  { img: bridge, title: "Bridge Battles!", rating: "95% Rating" },
+  { img: greedy, title: "Greedy Growers 🌱", rating: "97% Rating" },
 ];
 
 const continues = [
-  { img: evade.url, title: "Evade 🌊", stat: "93%", players: "50.2K" },
-  { img: bloxfruits.url, title: "⚔️ Blox Fruits", stat: "Rodent_br…", avatar: true },
-  { img: stealegg.url, title: "Steal An Egg", stat: "Ishow…", avatar: true },
+  { img: evade, title: "Evade 🌊", stat: "93%", players: "50.2K" },
+  { img: bloxfruits, title: "⚔️ Blox Fruits", stat: "Rodent_br…", avatar: true },
+  { img: stealegg, title: "Steal An Egg", stat: "Ishow…", avatar: true },
 ];
 
 function Header({ onBell }: { onBell: () => void }) {
