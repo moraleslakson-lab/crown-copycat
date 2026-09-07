@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import avMe from "@/assets/av_me.jpg.asset.json";
-import avSam from "@/assets/av_sam.jpg.asset.json";
-import avLucio from "@/assets/av_lucio.jpg.asset.json";
+import avMe from "@/assets/av_me.jpg";
+import avSam from "@/assets/av_sam.jpg";
+import avLucio from "@/assets/av_lucio.jpg";
 
 export type Friend = { id: string; name: string; game: string; avatar?: string };
 
@@ -23,11 +23,11 @@ const DEFAULTS: StoreSettings = {
   username: "aku_budoy",
   handle: "akubudoy",
   joined: "Joined 2018",
-  avatar: avMe.url,
+  avatar: avMe,
   robux: 400,
   friends: [
-    { id: "sam", name: "sam", game: "Steal An Egg", avatar: avSam.url },
-    { id: "lucio", name: "LUCIO", game: "Steal An Egg", avatar: avLucio.url },
+    { id: "sam", name: "sam", game: "Steal An Egg", avatar: avSam },
+    { id: "lucio", name: "LUCIO", game: "Steal An Egg", avatar: avLucio },
   ],
   theme: "dark",
   notifStyle: "center",
