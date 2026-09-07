@@ -13,7 +13,7 @@ import {
   SearchIcon,
   ThumbUpIcon,
 } from "@/components/rbx-icons";
-import robloxLogo from "@/assets/roblox_logo.png.asset.json";
+import robloxLogo from "@/assets/roblox_logo.png";
 const muscle = "/Screenshot_20260828-205446_1.jpg";
 const leaves = "/Screenshot_20260828-205446_2.jpg";
 const bridge = "/Screenshot_20260828-205446_3.jpg";
@@ -63,7 +63,7 @@ function Header({ onBell }: { onBell: () => void }) {
     <header className="sticky top-0 z-30 bg-background/95 backdrop-blur">
       <div className="flex items-center justify-between px-5 pt-4 pb-3">
         <MenuIcon className="h-6 w-8 text-foreground" />
-        <img src={robloxLogo.url} alt="Roblox" className="h-7 w-auto object-contain" />
+        <img src={robloxLogo} alt="Roblox" className="h-7 w-auto object-contain" />
         <div className="flex items-center gap-4">
           <SearchIcon className="h-6 w-6" />
           <Link to="/robux" aria-label="Buy Robux" className="rbx-tap">

@@ -1,10 +1,10 @@
-import robuxIconAsset from "@/assets/robux_icon.png.asset.json";
+import robuxIconAsset from "@/assets/robux_icon.png";
 
 type P = { className?: string };
 
 export const RobuxIcon = ({ className }: P) => (
   <img
-    src={robuxIconAsset.url}
+    src={robuxIconAsset}
     alt="Robux"
     className={`rbx-robux-img object-contain ${className ?? ""}`}
     draggable={false}

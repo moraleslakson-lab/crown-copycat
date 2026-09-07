@@ -10,7 +10,7 @@ import {
   TagIcon,
   VerifiedIcon,
 } from "@/components/rbx-icons";
-import crown from "@/assets/crown.jpg.asset.json";
+import crown from "@/assets/crown.jpg";
 import { useStoreSettings } from "@/lib/store-settings";
 
 export const Route = createFileRoute("/robux")({
